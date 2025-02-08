@@ -1,9 +1,12 @@
 # Python To do list
 
-task = []
+tasks = []
 
-def add_task():
-    pass
+def add_task(description):
+    task = {"description": description,
+            "completed": False,}
+    tasks.append(task)
+    print(f"Task added: {description}")
 
 def remove_task():
     pass
@@ -28,7 +31,8 @@ def main():
         choice = input("Enter your choice (1-5): ")
 
         if choice == "1":
-            add_task()
+            description = input("Enter your task's description: ")
+            add_task(description)
         elif choice == "2":
             remove_task()
         elif choice == "3":
