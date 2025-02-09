@@ -8,8 +8,13 @@ def add_task(description):
     tasks.append(task)
     print(f"Task added: {description}")
 
-def remove_task():
-    pass
+def remove_task(description):
+    for task in tasks:
+        if task["description"] == description:
+            tasks.remove(task)
+            print(f"Task removed: {description}")
+            return
+    print(f"Task not found: {description}")
 
 def mark_task_complete():
     pass
@@ -34,7 +39,8 @@ def main():
             description = input("Enter your task's description: ")
             add_task(description)
         elif choice == "2":
-            remove_task()
+            description = input("Enter task's description to remove: ")
+            remove_task(description)
         elif choice == "3":
             mark_task_complete()
         elif choice == "4":
