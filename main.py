@@ -16,8 +16,13 @@ def remove_task(description):
             return
     print(f"Task not found: {description}")
 
-def mark_task_complete():
-    pass
+def mark_task_complete(description):
+    for task in tasks:
+        if task["description"] == description:
+            task["completed"] = True
+            print(f"Task marked as completed: {description}")
+            return
+    print(f"Task not found: {description}")
 
 def view_task():
     pass
@@ -42,7 +47,8 @@ def main():
             description = input("Enter task's description to remove: ")
             remove_task(description)
         elif choice == "3":
-            mark_task_complete()
+            description = input("Enter task description to mark as completed: ")
+            mark_task_complete(description)
         elif choice == "4":
             view_task()
         elif choice == "5":
