@@ -36,21 +36,25 @@ def view_task():
 def main():
 
     while True:
-        print("*****************************")
+        print("******************")
         print(" **Welcome to** \nTo-Do List Manager")
+        print("******************")
+        print("******Option******")
         print("1. Add a Task")
         print("2. Remove a Task")
         print("3. Mark a Task as Completed")
         print("4. View Tasks")
         print("5. Exit")
+        print("******************")
+        print()
 
         choice = input("Enter your choice (1-5): ")
 
         if choice == "1":
-            description = input("Enter your task's description: ")
+            description = input("Enter your task description: ")
             add_task(description)
         elif choice == "2":
-            description = input("Enter task's description to remove: ")
+            description = input("Enter task description to remove: ")
             remove_task(description)
         elif choice == "3":
             description = input("Enter task description to mark as completed: ")
