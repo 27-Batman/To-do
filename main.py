@@ -25,7 +25,13 @@ def mark_task_complete(description):
     print(f"Task not found: {description}")
 
 def view_task():
-    pass
+    if not tasks:
+        print("No tasks found.")
+    else:
+        print("To-Do List:")
+        for i, task in enumerate(tasks, start=1):
+            status = "Completed" if task["completed"] else "Pending"
+            print(f"{i}. {task['description']} - {status}")
 
 def main():
 
